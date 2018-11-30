@@ -5,6 +5,7 @@
 import pandas as pd
 import numpy as np
 import sys
+import os
 
 runNum = '64'
 #runNum = '80'
@@ -16,8 +17,12 @@ runNum = '64'
 #runNum = '768'
 #runNum = '1024'
 
-inFile ='stats-Render-STOP-'+runNum+'.csv'
-outFile = 'stats-Render-STOP-shaped-'+runNum+'.csv'
+print( os.getcwd() )
+
+dataFolder = os.getcwd() + '/DataWrangling/20181108Terascope_01/'
+
+inFile =dataFolder+'stats-Render-STOP-'+runNum+'.csv'
+outFile = dataFolder+'stats-Render-STOP-shaped-'+runNum+'.csv'
 
 data  = pd.read_csv(inFile)
 #print ( sys.getsizeof( data ) )
