@@ -5,13 +5,15 @@
 import pandas as pd
 import numpy as np
 import sys
+import os
 
 
 print( "Calculating derived statistics" )
 
+dataFolder = os.getcwd() + '/DataWrangling/20181108Terascope_01/'
 
-inFile='summaryStats_1024_20181108.csv'
-outFile='derivedStats_1024_20181108.csv'
+inFile=dataFolder+'summaryStats_1024_20181108.csv'
+outFile=dataFolder+'derivedStats_1024_20181108.csv'
 
 outDf = pd.read_csv( inFile, index_col = 0 )
 print( outDf )

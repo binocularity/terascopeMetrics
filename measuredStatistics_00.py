@@ -5,12 +5,14 @@
 import pandas as pd
 import numpy as np
 import sys
+import os
 
 
 print( "Calculating measured statistics" )
 
+dataFolder = os.getcwd() + '/DataWrangling/20181108Terascope_01/'
 
-outFile='summaryStats_1024_20181108.csv'
+outFile=dataFolder+'summaryStats_1024_20181108.csv'
 
 index = ['64','80','96','112','128','256','512','768','1024']
 
@@ -21,7 +23,7 @@ outDf['runId'] = map(int,index)
 
 #Process shaped run data files.
 for runNum in index :
-    inFile ='stats-Render-STOP-shaped-'+runNum+'.csv'
+    inFile =dataFolder+'stats-Render-STOP-shaped-'+runNum+'.csv'
     print( inFile )
     inData = pd.read_csv(inFile)
     print( inData.head() )
